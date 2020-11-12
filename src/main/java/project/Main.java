@@ -4,7 +4,9 @@ package project;
 /**
  * Class containing the main method.
  *
- * @author Add Your Name Here
+ * @author Adriana Solis
+ * @author Kevin Lee
+ * @author Gabe Schwartz
  */
 
 public class Main {

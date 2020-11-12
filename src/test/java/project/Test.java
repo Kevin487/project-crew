@@ -4,7 +4,9 @@ package project;
 /**
  * A JUnit test suite.
  *
- * @author Add Your Name Here
+ * @author Adriana Solis
+ * @author Kevin Lee
+ * @author Gabe Schwartz
  */
 
 public class Test {
