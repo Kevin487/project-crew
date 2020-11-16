@@ -11,6 +11,6 @@ For example, this program can make an encryption key program that accepts messag
 
 ## Description of the Tasks that You Will Complete
 
-The task we will complete will be to accept a string of text that we will then encrypt and turn into a cypher. Once the text has been encrypted and turned into a cypher we will then take that cypher and decrypt it back into a readable string. This will be done by using a scanner to scan the inputted string into the code. Once the message has been inputted into the code using the scanner we will then use a hex string to create a cypher. We will then store the cypher and run it back through a hex string in order to get the message back.
+The task we will complete will be to accept a string of text that we will then encrypt and turn into a cypher. Once the text has been encrypted and turned into a cypher we will then take that cypher and decrypt it back into a readable string. This will be done by using a scanner to scan the inputted string into the code. Once the message has been inputted into the code using the scanner we will then use a hex string to create a cypher. We will then store the cypher and run it back through a hex string in order to get the message back. We will also use a key generator in order to add another layer of security and allow each of us to encrypt and decrypt messages across computers. We will also implement doubling experiments in order to evaluate the efficiency of the code.
 
 ## Detailed Plan for Your Team to Complete the Project
