@@ -1,6 +1,6 @@
 # Informative Title for the Project
 
-## Add Your Name(s)
+## Kevin Lee, Adriana Solis, Gabe Schwartz
 
 ## Description of the Main Idea
 
