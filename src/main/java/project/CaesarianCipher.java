@@ -49,6 +49,7 @@ public class CaesarianCipher {
       }
       // shows the character that is being replaced
       char replacedValue = alphabet.charAt(shiftValue);
+
       input = input + replacedValue;
     }
     return input.toString();

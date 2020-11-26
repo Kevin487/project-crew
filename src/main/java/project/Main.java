@@ -42,7 +42,7 @@ public class Main {
       System.out.println("Please enter the message that you want to encrypt: ");
       String userInput = scanner.next();
       System.out.println();
-      System.out.println("Please enter a shift value from 0-25: ");
+      System.out.println("Please enter a shift value from 0-12: ");
       System.out.println();
       int shiftedValue = scanner.nextInt();
       System.out.println();
