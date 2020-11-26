@@ -24,7 +24,7 @@ public class Main {
 
     System.out.println("Welcome to \"Useful Tool for Spies\", a Cipher program!");
     System.out.println();
-    System.out.println("Please choose your desired cipher from the availabel options below.");
+    System.out.println("Please choose your desired cipher from the available options below.");
     System.out.println();
     System.out.println("Cipher 1: Caesarian Cipher");
     System.out.println("Cipher 2: Vigenere Cipher");
@@ -45,6 +45,7 @@ public class Main {
       System.out.println("Please enter a shift value from 0-25: ");
       System.out.println();
       int shiftedValue = scanner.nextInt();
+      System.out.println();
       CaesarianCipher encrypt = new CaesarianCipher();
       String encryptedMessages = encrypt.encryptedMessage(userInput, shiftedValue);
       System.out.println("Encrypted Text:");
@@ -58,7 +59,7 @@ public class Main {
       System.out.println();
       System.out.print("Thank you for using \"Useful Tool for Spies\", a Cipher Program!");
       System.out.print(" Have a nice day!");
-      System.out.println();
+
     } else if (choiceEntry == VALUE_MIDDLE_LIMIT) {
       System.out.println();
       System.out.println("You have chosen the Vigenere Cipher!");
