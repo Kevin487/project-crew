@@ -19,8 +19,10 @@ public class Main {
     System.out.println("Cipher 1: Caesarian Cipher");
     System.out.println("Cipher 2:");
     System.out.println("Cipher 3:");
+    Scanner scanchoice = new Scanner(System.in);
     System.out.println("");
     System.out.println("Enter \"1\", \"2\" or \"3\"");
+    int choiceentry = scanchoice.nextInt();
   }
 
 }
