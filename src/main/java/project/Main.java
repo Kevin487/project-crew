@@ -17,6 +17,10 @@ import java.util.*;
 public class Main {
 
   // add your implementation of the main method
+
+  /**
+  * @param args
+  */
   public static void main(String[] args) {
     final int VALUE_LOWER_LIMIT = 1;
     final int VALUE_MIDDLE_LIMIT = 2;
@@ -40,12 +44,11 @@ public class Main {
       System.out.println();
       Scanner scanner = new Scanner(System.in);
       System.out.println("Please enter the message that you want to encrypt: ");
-      String userInput = scanner.next();
+      String userInput = scanner.nextLine();
       System.out.println();
-      System.out.println("Please enter a shift value from 0-12: ");
+      System.out.println("Please enter a shift value from 0-25: ");
       System.out.println();
       int shiftedValue = scanner.nextInt();
-      System.out.println();
       CaesarianCipher encrypt = new CaesarianCipher();
       String encryptedMessages = encrypt.encryptedMessage(userInput, shiftedValue);
       System.out.println("Encrypted Text:");
@@ -59,7 +62,7 @@ public class Main {
       System.out.println();
       System.out.print("Thank you for using \"Useful Tool for Spies\", a Cipher Program!");
       System.out.print(" Have a nice day!");
-
+      System.out.println();
     } else if (choiceEntry == VALUE_MIDDLE_LIMIT) {
       System.out.println();
       System.out.println("You have chosen the Vigenere Cipher!");

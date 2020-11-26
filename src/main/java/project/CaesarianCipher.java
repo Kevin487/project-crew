@@ -41,16 +41,14 @@ public class CaesarianCipher {
     String input = "";
 
     for (int i = 0; i < output.length(); i++) {
-      int value = alphabet.indexOf(output.charAt(i));
-      int shiftValue = (value - shifter) % 26;
-      // adding this if statement in case there are any negatives
-      if (shiftValue < 0) {
-        shiftValue = alphabet.length() + value;
+      int val = alphabet.indexOf(output.charAt(i));
+      int val2 = (val - shifter) % 26;
+      if (val2 < 0) {
+        val2 = alphabet.length() + val2;
       }
-      // shows the character that is being replaced
-      char replacedValue = alphabet.charAt(shiftValue);
+      char val3 = alphabet.charAt(val2);
 
-      input = input + replacedValue;
+      input = input + val3;
     }
     return input.toString();
   }
