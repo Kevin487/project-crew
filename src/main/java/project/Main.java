@@ -53,11 +53,6 @@ public class Main {
       String encryptedMessages = encrypt.encryptedMessage(userInput, shiftedValue);
       System.out.println("Encrypted Text:");
       System.out.println(encryptedMessages);
-      System.out.println();
-      CaesarianCipher decrypt = new CaesarianCipher();
-      String decryptedMessages = decrypt.decryptedMessage(encryptedMessages, shiftedValue);
-      System.out.println("Decrypted Text:");
-      System.out.println(decryptedMessages);
       scanner.close();
       System.out.println();
       System.out.print("Thank you for using \"Useful Tool for Spies\", a Cipher Program!");
