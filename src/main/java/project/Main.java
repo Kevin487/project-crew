@@ -75,11 +75,15 @@ public class Main {
       System.out.println();
       Scanner scanner = new Scanner(System.in);
       System.out.println("Please enter the message that you want to encrypt: ");
-      String userInput = scanner.nextLine();
+      String text = scanner.nextLine();
       System.out.println();
+      Scanner scanner2 = new Scanner(System.in);
       System.out.println("Please enter a key word: ");
+      String key = scanner.nextLine();
       System.out.println();
-      char keyWord = scanner.nextChar();
+      System.out.println("Encrypting your message...");
+      System.out.println();
+      VigenereCipher encrypt = new VigenereCipher();
     } else if (choiceEntry == VALUE_UPPER_LIMIT) {
       System.out.println();
       System.out.println("You have chosen the Java Cipher!");
