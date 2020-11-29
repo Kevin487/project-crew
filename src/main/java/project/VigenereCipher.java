@@ -41,5 +41,6 @@ public class VigenereCipher {
       }
 
     }
+    return input.toString();
 
   }
