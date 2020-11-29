@@ -72,6 +72,14 @@ public class Main {
     } else if (choiceEntry == VALUE_MIDDLE_LIMIT) {
       System.out.println();
       System.out.println("You have chosen the Vigenere Cipher!");
+      System.out.println();
+      Scanner scanner = new Scanner(System.in);
+      System.out.println("Please enter the message that you want to encrypt: ");
+      String userInput = scanner.nextLine();
+      System.out.println();
+      System.out.println("Please enter a key word: ");
+      System.out.println();
+      char keyWord = scanner.nextChar();
     } else if (choiceEntry == VALUE_UPPER_LIMIT) {
       System.out.println();
       System.out.println("You have chosen the Java Cipher!");
