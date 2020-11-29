@@ -31,12 +31,15 @@ public class VigenereCipher {
         key[i] = keyWord.charAt(j);
       }
     //encryption code
-    for(i = 0; i < msgLen; ++i)
+    for(i = 0; i < msgLen; ++i) {
       encryptedMsg[i] = (char) (((msg[i] + key[i]) % 26) + 'A');
+      }
 
     //decryption code
-    for(i = 0; i <msgLen; ++i)
+    for(i = 0; i <msgLen; ++i) {
       decryptedMsg[i] = (char)((((encryptedMsg[i] - key[i]) + 26) % 26) + 'A');
-    } return;
+      }
+
+    }
 
   }
