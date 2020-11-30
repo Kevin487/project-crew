@@ -6,15 +6,20 @@ import java.io.*;
  * This class attempts to erase characters echoed to the console.
  */
 
+ /**
+ * @author Quisay H. Mahmoud
+ * @author Alan Sommerer
+ * @author Adriana Solis
+ */
 public class MaskingThread extends Thread {
    private volatile boolean stop;
    private char echochar = '*';
 
   /**
-   *@param prompt The prompt displayed to the user
+   *@param prompt The question displayed to the user
    */
-   public MaskingThread(String prompt) {
-      System.out.print(prompt);
+   public MaskingThread(String question) {
+      System.out.print(question);
    }
 
   /**

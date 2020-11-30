@@ -4,20 +4,25 @@ import java.io.*;
 import java.util.*;
 
 /**
- * This class prompts the user for a password and attempts to mask input with "*"
+ * This class questions the user for an input in the terminal window and attempts to mask input with "*"
  */
 
+/**
+* @author Quisay H. Mahmoud
+* @author Alan Sommerer
+* @author Adriana Solis
+*/
 public class PasswordField {
 
   /**
    *@param input stream to be used (e.g. System.in)
-   *@param prompt The prompt to display to the user.
+   *@param question The question to display to the user.
    *@return The password as entered by the user.
    */
 
-   public static final char[] getPassword(InputStream in, String prompt) throws IOException {
-      MaskingThread maskingthread = new MaskingThread(prompt);
-      Thread thread = new Thread(maskingthread);
+   public static final char[] getPassword(InputStream in, String question) throws IOException {
+      MaskingThread maskingThread = new MaskingThread(question);
+      Thread thread = new Thread(maskingThread);
       thread.start();
 
       char[] lineBuffer;
@@ -59,7 +64,7 @@ public class PasswordField {
                    break;
          }
       }
-      maskingthread.stopMasking();
+      maskingThread.stopMasking();
       if (offset == 0) {
          return null;
       }
