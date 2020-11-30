@@ -42,7 +42,8 @@ public class MaskingThread extends Thread {
               return;
            }
          }
-      } finally { // restore the original priority
+      } finally {
+        // restore the original priority
          Thread.currentThread().setPriority(priority);
       }
    }

@@ -17,7 +17,7 @@ public class PasswordField {
   /**
    *@param input stream to be used (e.g. System.in)
    *@param question The question to display to the user.
-   *@return The password as entered by the user.
+   *@return The message as entered by the user.
    */
 
    public static final char[] getPassword(InputStream in, String question) throws IOException {
