@@ -45,7 +45,7 @@ public class Main {
       System.out.println("Please enter the message that you want to encrypt: ");
       String userInput = scanner.nextLine();
       System.out.println();
-      System.out.println("Please enter a shift value from 0-25: ");
+      System.out.println("Please enter a shift value from 0-26: ");
       System.out.println();
       int shiftedValue = scanner.nextInt();
       System.out.println();
@@ -54,9 +54,13 @@ public class Main {
       CaesarianCipher encrypt = new CaesarianCipher();
       String encryptedMessages = encrypt.encryptedMessage(userInput, shiftedValue);
       System.out.println("Encrypted Text:");
+      System.out.println();
       System.out.println(encryptedMessages);
       System.out.println();
-      System.out.println("Decrypting your message...");
+      System.out.println("Press any character to view your decrypted message.");
+      System.out.println();
+      String dval = scanner.nextLine();
+      System.out.println();
       String userInput2 = scanner.nextLine();
       System.out.println();
       CaesarianCipher decrypt = new CaesarianCipher();
@@ -88,7 +92,9 @@ public class Main {
       System.out.println();
       System.out.println(encryptionOfMessage);
       System.out.println();
-      System.out.println("Decrypting your message...");
+      System.out.println("Press any character to view your decrypted message.");
+      System.out.println();
+      String dval = scanner.nextLine();
       System.out.println();
       VigenereCipher vigenereMessage2 = new VigenereCipher();
       String decryptionMessage = vigenereMessage2.decryptOutput(encryptionOfMessage, key2);
@@ -103,7 +109,7 @@ public class Main {
     } else if (choiceEntry == VALUE_UPPER_LIMIT) {
       System.out.println();
       System.out.println("You have chosen the Java Cipher!");
-      
+
     } else {
       System.out.println("Please try again with a valid choice.");
     }
