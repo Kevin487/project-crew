@@ -11,6 +11,7 @@ import java.util.Scanner;
  */
 
 public class CaesarianCipher {
+
   /* value of the alphabet. */
   public static final String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
@@ -26,17 +27,23 @@ public class CaesarianCipher {
 
       // finds out what the value of the shift is
       int shiftValue = (shifter + value) % 26;
+
       // finds out what character needs to be replaced
       char replacedValue = alphabet.charAt(shiftValue);
+
       // adding this to the output
       output = output + replacedValue;
+
     }
     return output.toString();
   }
+
   /* start of the decryption method from the user generated input */
   public static String decryptedMessage(String output, int shifter) {
+
     // converst the output into lowercase for simplicity
     output = output.toLowerCase();
+
     // initializes an empty String
     String input = "";
 

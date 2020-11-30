@@ -1,5 +1,7 @@
 package project;
+
 import java.util.Scanner;
+
 /**
 * Class containing the Vigenere encryption and decryption method.
 *
@@ -8,17 +10,24 @@ import java.util.Scanner;
 * @author Gabe Schwartz
 */
 public class VigenereCipher {
+
   // initialzing the variables
+
   /* the message from the user that will be encrypted. */
   private String input;
+
   /* the message from the user that will be decrypted. */
   private String output;
+
   /* the key that is used to decrypt the output. */
   private String key;
+
   /* declares the alphabet which will be used to encrypt/decrypt the message */
   public static final String alphabetUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   public static final String alphabetLowercase = "abcdefghijklmnopqrstuvwxyz";
+
   // ENCRYPTION PART OF THE CODE
+
   /**
   * Uses the Vigenere Cipher to encrypt the message from the user.
   * @return the encrypted message.
@@ -29,21 +38,28 @@ public class VigenereCipher {
     key = key.toLowerCase();
     // the current character that is being encrypted
     char current;
+
     // the current character used for the key
     char keyCurrent;
+
     // the index of the current character in the Key
     int placeOfKey = 0;
+
     // the amount of the shift according to the corresponding letter
     int shifter = 0;
+
     // where the current letter is in terms of the alphabet
     int placeOfLetter = 0;
+
     // where the cipher designates that the letter starts at in the alphabet
     int placeOfCipher = 0;
+
     for(int i = 0; i < input.length(); i++) {
       current = input.charAt(i);
       //the current letter being encrypted.
       keyCurrent = key.charAt(placeOfKey);
       //the current letter in the Key being used.
+
       // if indexOf() doesn't find the char, it returns -1 as the index.
       if(alphabetUppercase.indexOf(current) > -1) //if the plaintext letter is uppercase
       {
@@ -77,7 +93,9 @@ public class VigenereCipher {
     }
     return output.toString();
   }
+
   // DECRYPTION PART OF THE CIPHER
+
   /**
   * Uses the Vigenere Cipher to decrypt the output.
   * @return the decrypted message.
@@ -88,21 +106,28 @@ public class VigenereCipher {
     key = key.toLowerCase();
     // the current character that is being encrypted
     char current;
+
     // the current character used for the key
     char keyCurrent;
+
     // the index of the current character in the Key
     int placeOfKey = 0;
+
     // the amount of the shift according to the corresponding letter
     int shifter = 0;
+
     // where the current letter is in terms of the alphabet
     int placeOfLetter = 0;
+
     // where the cipher designates that the letter starts at in the alphabet
     int placeOfInput = 0;
+
     for (int i = 0; i < output.length(); i++) {
       current = output.charAt(i);
       //the current letter being decrypted.
       keyCurrent = key.charAt(placeOfKey);
       //the current letter in the Key being used.
+      
       // if indexOf() doesn't find the char, it returns -1 as the index.
       if(alphabetUppercase.indexOf(current) > -1)
       //if the output letter is uppercase
