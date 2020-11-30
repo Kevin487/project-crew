@@ -1,11 +1,7 @@
 package project;
-
 import java.lang.*;
 import java.util.Scanner;
 import java.util.*;
-
-
-
 /**
 * Class containing the main method.
 *
@@ -13,11 +9,8 @@ import java.util.*;
 * @author Kevin Lee
 * @author Gabe Schwartz
 */
-
 public class Main {
-
   // add your implementation of the main method
-
   /**
   * @param args
   */
@@ -25,7 +18,6 @@ public class Main {
     final int VALUE_LOWER_LIMIT = 1;
     final int VALUE_MIDDLE_LIMIT = 2;
     final int VALUE_UPPER_LIMIT = 3;
-
     System.out.println("Welcome to \"Useful Tool for Spies\", a Cipher program!");
     System.out.println();
     System.out.println("Please choose your desired cipher from the available options below.");
@@ -75,16 +67,30 @@ public class Main {
       System.out.println();
       Scanner scanner = new Scanner(System.in);
       System.out.println("Please enter the message that you want to encrypt: ");
-      String userInput = scanner.nextLine();
+      String messageFromUser = scanner.nextLine();
       System.out.println();
-      Scanner scanner2 = new Scanner(System.in);
-      System.out.println("Please enter a key word: ");
-      String keyWord = scanner.nextLine();
+      System.out.println("Please enter your desired key.");
+      String key2 = scanner.nextLine();
       System.out.println();
       System.out.println("Encrypting your message...");
       System.out.println();
-      VigenereCipher encrypt = new VigenereCipher();
-      Void encryptedDycrypts = encrypt.encryptedDycrypt(userInput, keyWord);
+      VigenereCipher vigenereMessage = new VigenereCipher();
+      String encryptionOfMessage = vigenereMessage.encryptInput(messageFromUser, key2);
+      System.out.println("Encrypted Text:");
+      System.out.println();
+      System.out.println(encryptionOfMessage);
+      System.out.println();
+      System.out.println("Decrypting your message...");
+      System.out.println();
+      VigenereCipher vigenereMessage2 = new VigenereCipher();
+      String decryptionMessage = vigenereMessage2.decryptOutput(encryptionOfMessage, key2);
+      System.out.println("Decrypted Message:");
+      System.out.println();
+      System.out.println(decryptionMessage);
+      System.out.println();
+      System.out.print("Thank you for using \"Useful Tool for Spies\", a Cipher Program!");
+      System.out.print(" Have a nice day!");
+      System.out.println();
     } else if (choiceEntry == VALUE_UPPER_LIMIT) {
       System.out.println();
       System.out.println("You have chosen the Java Cipher!");
@@ -92,5 +98,4 @@ public class Main {
       System.out.println("Please try again with a valid choice.");
     }
   }
-
 }
