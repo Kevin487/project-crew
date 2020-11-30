@@ -12,7 +12,7 @@ import java.util.*;
 * @author Kevin Lee
 * @author Gabe Schwartz
 */
-public class Main {
+public class CipherProgram {
 
   // add your implementation of the main method
 
