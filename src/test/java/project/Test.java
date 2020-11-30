@@ -10,5 +10,5 @@ package project;
  */
 
 public class Test {
-  // TODO: add your implementation of the test cases
+  // add your implementation of the test cases
 }
