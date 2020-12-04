@@ -95,8 +95,32 @@ public class CipherProgram {
       }
     } else if (choiceEntry == VALUE_UPPER_LIMIT) {
       System.out.println("\nYou have chosen the Java Cipher!");
+      Scanner scanner = new Scanner(System.in);
+      char password3[] = null;
+      try {
+        password3 = PasswordField.getPassword(System.in, "Please enter your message: \n");
+      } catch(IOException ioe) {
+        ioe.printStackTrace();
+      }
+      if (password3 == null) {
+        System.out.println("\nNo message was entered.");
     } else {
       System.out.println("\nPlease try again with a valid choice.");
+
+      System.out.println("\nEncrypting your message...");
+
+
+
+      System.out.println("\nEncrypted Text: \n");
+
+      System.out.println("\nPress any character to view your decrypted message.\n");
+
+
+
+      System.out.println("\nDecrypted Message: \n");
+
+      System.out.print("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
+      System.out.print(" Have a nice day!");
     }
   }
 }
