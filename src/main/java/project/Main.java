@@ -9,7 +9,7 @@ import java.util.*;
 * @author Kevin Lee
 * @author Gabe Schwartz
 */
-public class Main {
+public class CipherProgram {
   // add your implementation of the main method
   /**
   * @param args
@@ -35,67 +35,91 @@ public class Main {
       System.out.println("You have chosen the Caesarian Cipher!");
       System.out.println();
       Scanner scanner = new Scanner(System.in);
-      System.out.println("Please enter the message that you want to encrypt: ");
-      String userInput = scanner.nextLine();
-      System.out.println();
-      System.out.println("Please enter a shift value from 0-25: ");
-      System.out.println();
-      int shiftedValue = scanner.nextInt();
-      System.out.println();
-      System.out.println("Encrypting your message...");
-      System.out.println();
-      CaesarianCipher encrypt = new CaesarianCipher();
-      String encryptedMessages = encrypt.encryptedMessage(userInput, shiftedValue);
-      System.out.println("Encrypted Text:");
-      System.out.println(encryptedMessages);
-      System.out.println();
-      System.out.println("Decrypting your message...");
-      String userInput2 = scanner.nextLine();
-      System.out.println();
-      CaesarianCipher decrypt = new CaesarianCipher();
-      String decryptedMessages = decrypt.decryptedMessage(encryptedMessages, shiftedValue);
-      System.out.println("Decrypted Text:");
-      System.out.println(decryptedMessages);
-      scanner.close();
-      System.out.println();
-      System.out.print("Thank you for using \"Useful Tool for Spies\", a Cipher Program!");
-      System.out.print(" Have a nice day!");
-      System.out.println();
+      char password[] = null;
+        try {
+          password = PasswordField.getPassword(System.in, "Please enter your message: ");
+        } catch(IOException ioe) {
+          ioe.printStackTrace();
+        }
+        if (password == null) {
+          System.out.println("No message was entered.");
+        } else {
+          System.out.println();
+          System.out.println("Please enter a shift value from 0-26: ");
+          System.out.println();
+          int shiftedValue = scanner.nextInt();
+          System.out.println();
+          System.out.println("Encrypting your message...");
+          System.out.println();
+          CaesarianCipher encrypt = new CaesarianCipher();
+          String userInput = String.valueOf(password);
+          String encryptedMessages = encrypt.encryptedMessage(userInput, shiftedValue);
+          System.out.println("Encrypted Text:");
+          System.out.println();
+          System.out.println(encryptedMessages);
+          System.out.println();
+          System.out.println("Press any character to view your decrypted message.");
+          System.out.println();
+          String dval = scanner.nextLine();
+          System.out.println();
+          String userInput2 = scanner.nextLine();
+          System.out.println();
+          CaesarianCipher decrypt = new CaesarianCipher();
+          String decryptedMessages = decrypt.decryptedMessage(encryptedMessages, shiftedValue);
+          System.out.println("Decrypted Text:");
+          System.out.println(decryptedMessages);
+          scanner.close();
+          System.out.println();
+          System.out.print("Thank you for using \"Useful Tool for Spies\", a Cipher Program!");
+          System.out.print(" Have a nice day!");
+          System.out.println();
+        }
+
     } else if (choiceEntry == VALUE_MIDDLE_LIMIT) {
       System.out.println();
       System.out.println("You have chosen the Vigenere Cipher!");
       System.out.println();
       Scanner scanner = new Scanner(System.in);
-      System.out.println("Please enter the message that you want to encrypt: ");
-      String messageFromUser = scanner.nextLine();
-      System.out.println();
-      System.out.println("Please enter your desired key.");
-      String key2 = scanner.nextLine();
-      System.out.println();
-      System.out.println("Encrypting your message...");
-      System.out.println();
-      VigenereCipher vigenereMessage = new VigenereCipher();
-      String encryptionOfMessage = vigenereMessage.encryptInput(messageFromUser, key2);
-      System.out.println("Encrypted Text:");
-      System.out.println();
-      System.out.println(encryptionOfMessage);
-      System.out.println();
-      System.out.println("Decrypting your message...");
-      System.out.println();
-      VigenereCipher vigenereMessage2 = new VigenereCipher();
-      String decryptionMessage = vigenereMessage2.decryptOutput(encryptionOfMessage, key2);
-      System.out.println("Decrypted Message:");
-      System.out.println();
-      System.out.println(decryptionMessage);
-      System.out.println();
-      System.out.print("Thank you for using \"Useful Tool for Spies\", a Cipher Program!");
-      System.out.print(" Have a nice day!");
-      System.out.println();
+      char password2[] = null;
+      try {
+        password2 = PasswordField.getPassword(System.in, "Please enter your message: ");
+      } catch(IOException ioe) {
+        ioe.printStackTrace();
+      }
+      if (password2 == null) {
+        System.out.println("No message was entered.");
+      } else {
+        System.out.println();
+        System.out.println("Please enter your desired key.");
+        String key2 = scanner.nextLine();
+        System.out.println();
+        System.out.println("Encrypting your message...");
+        System.out.println();
+        VigenereCipher vigenereMessage = new VigenereCipher();
+        String messageFromUser = String.valueOf(password2);
+        String encryptionOfMessage = vigenereMessage.encryptInput(messageFromUser, key2);
+        System.out.println("Encrypted Text:");
+        System.out.println();
+        System.out.println(encryptionOfMessage);
+        System.out.println();
+        System.out.println("Press any character to view your decrypted message.");
+        System.out.println();
+        String dval = scanner.nextLine();
+        System.out.println();
+        VigenereCipher vigenereMessage2 = new VigenereCipher();
+        String decryptionMessage = vigenereMessage2.decryptOutput(encryptionOfMessage, key2);
+        System.out.println("Decrypted Message:");
+        System.out.println();
+        System.out.println(decryptionMessage);
+        System.out.println();
+        System.out.print("Thank you for using \"Useful Tool for Spies\", a Cipher Program!");
+        System.out.print(" Have a nice day!");
+        System.out.println();
+      }
     } else if (choiceEntry == VALUE_UPPER_LIMIT) {
       System.out.println();
       System.out.println("You have chosen the Java Cipher!");
-    } else {
-      System.out.println("Please try again with a valid choice.");
+
     }
   }
 }
