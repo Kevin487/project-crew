@@ -23,8 +23,9 @@ import static org.junit.Assert.*;
 
    @Test
    public void cipherShouldEncryptLowercaseLetters() {
-     assertEquals("kfa", cipher.encryptMessage("abc", key));
-     assertEquals("qxg", cipher.encryptMessage("abc", key2));
-     assertEquals("zye", cipher.encryptMessage("abc", key3));
-     assertEquals("ipr", cipher.encryptMessage("abc", key3));
+     assertEquals("kfa", cipher.encryptInput("abc", key1));
+     assertEquals("qxg", cipher.encryptInput("abc", key2));
+     assertEquals("zye", cipher.encryptInput("abc", key3));
+     assertEquals("ipr", cipher.encryptInput("abc", key4));
    }
+}
