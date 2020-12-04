@@ -121,6 +121,7 @@ public class CipherProgram {
 
       System.out.print("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
       System.out.print(" Have a nice day!");
+      }
     }
   }
 }
