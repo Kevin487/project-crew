@@ -60,6 +60,7 @@ public class TestJavaCipher {
     String message = "hello";
     String encrypt = cipher.encryptedMessage(message, 3);
     assertEquals(message, cipher.encryptedMessage(encrypt, -3));
+    
     String key1 = "key";
     String key2 = "qwe";
     String key3 = "zxc";
