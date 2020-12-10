@@ -1,10 +1,8 @@
 package project;
-
 import java.lang.*;
 import java.io.*;
 import java.util.Scanner;
 import java.util.*;
-
 /**
 * Class containing the main method.
 *
@@ -13,18 +11,14 @@ import java.util.*;
 * @author Gabe Schwartz
 */
 public class CipherProgram {
-
   // add your implementation of the main method
-
   /**
   * @param args
   */
   public static void main(String[] args) {
-
     final int VALUE_LOWER_LIMIT = 1;
     final int VALUE_MIDDLE_LIMIT = 2;
     final int VALUE_UPPER_LIMIT = 3;
-
     System.out.println("Welcome to \"Useful Tool for Spies\", a Cipher program!\n");
     System.out.println("Please choose your desired cipher from the available options below.\n");
     System.out.println("Cipher 1: Caesarian Cipher");
@@ -104,24 +98,33 @@ public class CipherProgram {
       }
       if (password3 == null) {
         System.out.println("\nNo message was entered.");
+      } else {
+        System.out.println("\nPlease enter your desired word to use as your key.\n");
+        String key3 = scanner.nextLine();
+        System.out.println("\nPlease enter a shift value from 0-25.\n");
+        int shifter1 = scanner.nextInt();
+        System.out.println("\nEncrypting your message...");
+        VigenereCipher message2 = new VigenereCipher();
+        String hello = String.valueOf(password3);
+        String wordy = message2.encryptInput(hello, key3);
+        CaesarianCipher message3 = new CaesarianCipher();
+        String finalEncryption = message3.encryptedMessage(wordy, shifter1);
+        System.out.println("\nEncrypted Text: \n");
+        System.out.println(finalEncryption);
+        System.out.println("\nPress any character to view your decrypted message.\n");
+        String ddddd = scanner.nextLine();
+        String kevin = scanner.nextLine();
+        CaesarianCipher word1 = new CaesarianCipher();
+        String decryption1 = word1.decryptedMessage(finalEncryption, shifter1);
+        VigenereCipher table = new VigenereCipher();
+        String finalDecryption = table.decryptOutput(decryption1, key3);
+        System.out.println("\nDecrypted Message: \n");
+        System.out.println(finalDecryption);
+        System.out.print("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
+        System.out.print(" Have a nice day!");
+      }
     } else {
       System.out.println("\nPlease try again with a valid choice.");
-
-      System.out.println("\nEncrypting your message...");
-
-
-
-      System.out.println("\nEncrypted Text: \n");
-
-      System.out.println("\nPress any character to view your decrypted message.\n");
-
-
-
-      System.out.println("\nDecrypted Message: \n");
-
-      System.out.print("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
-      System.out.print(" Have a nice day!");
-      }
     }
   }
 }
