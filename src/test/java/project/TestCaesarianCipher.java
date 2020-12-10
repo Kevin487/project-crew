@@ -15,8 +15,6 @@ import static org.junit.Assert.*;
 public class TestCaesarianCipher {
   // add your implementation of the test cases
   private CaesarianCipher cipher = new CaesarianCipher();
-  private VigenereCipher cipher2 = new VigenereCipher();
-
   /* Tests that the cipher should do nothing with an empty message. */
   @Test
   public void cipherShouldDoNothingWithEmptyMessageWithShifter3() {
@@ -57,18 +55,5 @@ public class TestCaesarianCipher {
     String message = "hello";
     String encrypt = cipher.encryptedMessage(message, 3);
     assertEquals(message, cipher.encryptedMessage(encrypt, -3));
-
-
-    String key1 = "key";
-    String key2 = "qwe";
-    String key3 = "zxc";
-    String key4 = "iop";
-
-    @Test
-    public void cipherShouldEncryptLowercaseLetters() {
-      assertEquals("kfa", cipher2.encryptInput("abc", key1));
-      assertEquals("qxg", cipher2.encryptInput("abc", key2));
-      assertEquals("zye", cipher2.encryptInput("abc", key3));
-      assertEquals("ipr", cipher2.encryptInput("abc", key4));
-    }
   }
+}
