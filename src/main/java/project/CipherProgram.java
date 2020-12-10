@@ -1,8 +1,10 @@
 package project;
+
 import java.lang.*;
 import java.io.*;
 import java.util.Scanner;
 import java.util.*;
+
 /**
 * Class containing the main method.
 *
@@ -19,6 +21,7 @@ public class CipherProgram {
     final int VALUE_LOWER_LIMIT = 1;
     final int VALUE_MIDDLE_LIMIT = 2;
     final int VALUE_UPPER_LIMIT = 3;
+
     System.out.println("Welcome to \"Useful Tool for Spies\", a Cipher program!\n");
     System.out.println("Please choose your desired cipher from the available options below.\n");
     System.out.println("Cipher 1: Caesarian Cipher");
