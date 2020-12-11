@@ -32,12 +32,26 @@ import static org.junit.Assert.*;
      assertEquals("zye", cipher.encryptInput("abc", key3));
      assertEquals("ipr", cipher.encryptInput("abc", key4));
    }
-   
+
    @Test
    public void cipherShouldEncryptUppercaseLetters() {
      assertEquals("KFA", cipher.encryptInput("ABC", key5));
      assertEquals("QXG", cipher.encryptInput("ABC", key6));
      assertEquals("ZYE", cipher.encryptInput("ABC", key7));
      assertEquals("IPR", cipher.encryptInput("ABC", key8));
+   }
+
+   @Test
+   public void cipherShouldEncryptAlphabetWithShitfer3() {
+     String alph = "the quick brown fox jumps over the lazy dog";
+     String encrypt = cipher.encryptedMessage(alph, 3);
+     assertEquals(encrypt, cipher.encryptedMessage(alph, 3));
+   }
+
+   @Test
+   public void cipherShouldDecryptMessageWithShifter3() {
+     String message = "hello";
+     String encrypt = cipher.encryptedMessage(message, 3);
+     assertEquals(message, cipher.encryptedMessage(encrypt, -3));
    }
 }
