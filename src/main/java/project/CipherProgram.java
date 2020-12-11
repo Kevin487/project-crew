@@ -13,7 +13,9 @@ import java.util.*;
 * @author Gabe Schwartz
 */
 public class CipherProgram {
+
   // add your implementation of the main method
+  
   /**
   * @param args
   */
@@ -33,6 +35,7 @@ public class CipherProgram {
     if (choiceEntry == VALUE_LOWER_LIMIT) {
       System.out.println("\nYou have chosen the Caesarian Cipher!\n");
       Scanner scanner = new Scanner(System.in);
+      File inputFile = null;
       char password[] = null;
       try {
         password = PasswordField.getPassword(System.in, "Please enter your message: \n");
@@ -57,7 +60,28 @@ public class CipherProgram {
         String decryptedMessages = decrypt.decryptedMessage(encryptedMessages, shiftedValue);
         System.out.println("\nDecrypted Text: \n");
         System.out.println(decryptedMessages);
-        scanner.close();
+        System.out.println("\nPrinting out the results of running the Caesarian Cipher.\n");
+        String value2341 = scanner.nextLine();
+        // declare the starting file and scanner
+        File inputFile2 = null;
+        Scanner scann = null;
+        // connect the scanner to the input file
+        try {
+          inputFile2 = new File("input/numbers30000.csv");
+          scann = new Scanner(inputFile2);
+        } catch (FileNotFoundException noFile) {
+          System.out.println("Unable to locate the input file");
+        }
+        int[] numbers = new int[30000]; // needs to be changed per input file
+        for (int count = 0; count < numbers.length; count++) {
+          numbers[count] = scann.nextInt();
+        }
+        System.out.println("Size of the array is: " + numbers.length);
+        long startTime = System.currentTimeMillis();
+        long endTime = System.currentTimeMillis();
+        long elapsed = endTime - startTime;
+        System.out.println("Running Time: " + elapsed);
+        String value2340 = scanner.nextLine();
         System.out.println("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
         System.out.println("Have a nice day!");
       }
@@ -87,8 +111,31 @@ public class CipherProgram {
         String decryptionMessage = vigenereMessage2.decryptOutput(encryptionOfMessage, key2);
         System.out.println("\nDecrypted Message: \n");
         System.out.println(decryptionMessage);
-        System.out.print("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
-        System.out.print(" Have a nice day!");
+        String value234 = scanner.nextLine();
+        System.out.println("\nPrinting out the results of running the Vigenere Cipher.\n");
+        String value23488 = scanner.nextLine();
+        // declare the starting file and scanner
+        File inputFile3 = null;
+        Scanner scann1 = null;
+        // connect the scanner to the input file
+        try {
+          inputFile3 = new File("input/numbers30000.csv");
+          scann1 = new Scanner(inputFile3);
+        } catch (FileNotFoundException noFile) {
+          System.out.println("Unable to locate the input file");
+        }
+        int[] numbers1 = new int[30000]; // needs to be changed per input file
+        for (int count1 = 0; count1 < numbers1.length; count1++) {
+          numbers1[count1] = scann1.nextInt();
+        }
+        System.out.println("Size of the array is: " + numbers1.length);
+        long startTime1 = System.currentTimeMillis();
+        long endTime1 = System.currentTimeMillis();
+        long elapsed1 = endTime1 - startTime1;
+        System.out.println("Running Time: " + elapsed1);
+        String value2345 = scanner.nextLine();
+        System.out.println("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
+        System.out.println("Have a nice day!");
       }
     } else if (choiceEntry == VALUE_UPPER_LIMIT) {
       System.out.println("\nYou have chosen the Java Cipher!");
@@ -123,8 +170,30 @@ public class CipherProgram {
         String finalDecryption = table.decryptOutput(decryption1, key3);
         System.out.println("\nDecrypted Message: \n");
         System.out.println(finalDecryption);
-        System.out.print("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
-        System.out.print(" Have a nice day!");
+        System.out.println("\nPrinting out the results of running the Vigenere Cipher.\n");
+        String value2349 = scanner.nextLine();
+        // declare the starting file and scanner
+        File inputFile4 = null;
+        Scanner scann2 = null;
+        // connect the scanner to the input file
+        try {
+          inputFile4 = new File("input/numbers30000.csv");
+          scann2 = new Scanner(inputFile4);
+        } catch (FileNotFoundException noFile) {
+          System.out.println("Unable to locate the input file");
+        }
+        int[] numbers2 = new int[30000]; // needs to be changed per input file
+        for (int count2 = 0; count2 < numbers2.length; count2++) {
+          numbers2[count2] = scann2.nextInt();
+        }
+        System.out.println("Size of the array is: " + numbers2.length);
+        long startTime2 = System.currentTimeMillis();
+        long endTime2 = System.currentTimeMillis();
+        long elapsed2 = endTime2 - startTime2;
+        System.out.println("Running Time: " + elapsed2);
+        String value2347 = scanner.nextLine();
+        System.out.println("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
+        System.out.println("Have a nice day!");
       }
     } else {
       System.out.println("\nPlease try again with a valid choice.");
