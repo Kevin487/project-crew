@@ -22,6 +22,11 @@ public class TestJavaCipher {
     assertEquals("", cipher.encryptedMessage("", 3));
   }
 
+  @Test
+  public void cipherShouldDoNothingWithEmptyMessageWithShifter33() {
+    assertEquals("", cipher2.encryptedMessage("", 3));
+  }
+
   /* Tests that the cipher should encrypt lowercase letters. */
 
   @Test
@@ -72,7 +77,7 @@ public class TestJavaCipher {
   String key8 = "IOP";
 
   @Test
-  public void cipherShouldEncryptLowercaseLetters() {
+  public void cipherShouldEncryptLowercaseLetterss() {
     assertEquals("kfa", cipher2.encryptInput("abc", key1));
     assertEquals("qxg", cipher2.encryptInput("abc", key2));
     assertEquals("zye", cipher2.encryptInput("abc", key3));
@@ -80,7 +85,7 @@ public class TestJavaCipher {
   }
 
   @Test
-  public void cipherShouldEncryptUppercaseLetters() {
+  public void cipherShouldEncryptUppercaseLetterss() {
     assertEquals("KFA", cipher2.encryptInput("ABC", key5));
     assertEquals("QXG", cipher2.encryptInput("ABC", key6));
     assertEquals("ZYE", cipher2.encryptInput("ABC", key7));
@@ -88,14 +93,14 @@ public class TestJavaCipher {
   }
 
   @Test
-  public void cipherShouldEncryptAlphabetWithShitfer3() {
+  public void cipherShouldEncryptAlphabetWithShitfer33() {
     String alph = "the quick brown fox jumps over the lazy dog";
     String encrypt = cipher2.encryptedMessage(alph, 3);
     assertEquals(encrypt, cipher2.encryptedMessage(alph, 3));
   }
 
   @Test
-  public void cipherShouldDecryptMessageWithShifter3() {
+  public void cipherShouldDecryptMessageWithShifter33() {
     String message = "hello";
     String encrypt = cipher2.encryptedMessage(message, 3);
     assertEquals(message, cipher2.encryptedMessage(encrypt, -3));
