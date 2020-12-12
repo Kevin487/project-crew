@@ -75,32 +75,11 @@ public class TestJavaCipher {
   String key8 = "IOP";
 
   @Test
-  public void cipherShouldEncryptLowercaseLetterss() {
+  public void vigenereCipherShouldEncryptLowercaseLetterss() {
     assertEquals("kfa", cipher2.encryptInput("abc", key1));
     assertEquals("qxg", cipher2.encryptInput("abc", key2));
     assertEquals("zye", cipher2.encryptInput("abc", key3));
     assertEquals("ipr", cipher2.encryptInput("abc", key4));
   }
 
-  @Test
-  public void cipherShouldEncryptUppercaseLetterss() {
-    assertEquals("KFA", cipher2.encryptInput("ABC", key5));
-    assertEquals("QXG", cipher2.encryptInput("ABC", key6));
-    assertEquals("ZYE", cipher2.encryptInput("ABC", key7));
-    assertEquals("IPR", cipher2.encryptInput("ABC", key8));
-  }
-
-  @Test
-  public void cipherShouldEncryptAlphabetWithShitfer3() {
-    String alph = "the quick brown fox jumps over the lazy dog";
-    String encrypt = cipher2.encryptedMessage(alph, 3);
-    assertEquals(encrypt, cipher2.encryptedMessage(alph, 3));
-  }
-
-  @Test
-  public void cipherShouldDecryptMessageWithShifter3() {
-    String message = "hello";
-    String encrypt = cipher2.encryptedMessage(message, 3);
-    assertEquals(message, cipher2.encryptedMessage(encrypt, -3));
-  }
 }
