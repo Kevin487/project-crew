@@ -56,14 +56,11 @@ TestCaesarianCipher.java
 TestVigenereCipher.java
 - Testing that the cipher will not handle empty messages from users
 - Test that the cipher should be able to encrypt and decrypt Uppercase and Lowercase letters
-- Test that the cipher should be able to encrypt the entire alphabet
-- Test that the cipher should be able to decrypt the users input
+
 
 TestJavaCipher.java
 - Testing that the cipher will not handle empty messages from users
 - Test that the cipher should be able to encrypt and decrypt Uppercase and Lowercase letters
-- Test that the cipher should be able to encrypt the entire alphabet
-- Test that the cipher should be able to decrypt the users input
 
 
 ## Evaluation and Testing of your Program
@@ -193,6 +190,38 @@ Decrypted Message:
 thank you professor jj
 
 Printing out the results of running the Vigenere Cipher.
+
+```
+```
+bash-5.0# gradle test
+
+> Task :test
+
+project.TestCaesarianCipher > cipherShouldDoNothingWithEmptyMessageWithShifter3 PASSED
+
+project.TestCaesarianCipher > cipherShouldEncryptLowercaseLetters PASSED
+
+project.TestCaesarianCipher > cipherShouldEncryptUppercaseLetters PASSED
+
+project.TestCaesarianCipher > cipherShouldEncryptAlphabetWithShitfer3 PASSED
+
+project.TestCaesarianCipher > cipherShouldDecryptMessageWithShifter3 PASSED
+
+project.TestJavaCipher > cipherShouldDoNothingWithEmptyMessageWithShifter3 PASSED
+
+project.TestJavaCipher > cipherShouldEncryptLowercaseLetters PASSED
+
+project.TestJavaCipher > cipherShouldEncryptUppercaseLetters PASSED
+
+project.TestJavaCipher > cipherShouldEncryptAlphabetWithShitfer3 PASSED
+
+project.TestJavaCipher > cipherShouldDecryptMessageWithShifter3 PASSED
+
+project.TestJavaCipher > vigenereCipherShouldEncryptLowercaseLetterss PASSED
+
+project.TestVigenereCipher > vigenereCipherShouldEncryptLowercaseLetters PASSED
+
+project.TestVigenereCipher > vigenereCipherShouldEncryptUppercaseLetters PASSED
 
 ```
 
