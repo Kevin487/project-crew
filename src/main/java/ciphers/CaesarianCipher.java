@@ -15,7 +15,9 @@ public class CaesarianCipher {
   /* value of the alphabet. */
   public static final String alphabet = "abcdefghijklmnopqrstuvwxyz0123456789 ";
 
-  /* start of the encryption method for the user generated input. */
+  /**
+  * start of the encryption method for the user generated input.
+  */
   public static String encryptedMessage(String input, int shifter) {
 
     // converts the input from the user to lowercase for simplicity
@@ -42,7 +44,9 @@ public class CaesarianCipher {
     return output.toString();
   }
 
-  /* start of the decryption method from the user generated input */
+  /**
+  * start of the decryption method from the user generated input.
+  */
   public static String decryptedMessage(String output, int shifter) {
 
     // converst the output into lowercase for simplicity
@@ -57,7 +61,7 @@ public class CaesarianCipher {
       int val = alphabet.indexOf(decrypt);
 
       int val2 = (val - shifter) % alphabet.length();
-      
+
       if (val2 < 0) {
         val2 += Math.abs(alphabet.length());
       }

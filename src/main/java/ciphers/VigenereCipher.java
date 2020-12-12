@@ -54,42 +54,50 @@ public class VigenereCipher {
     // where the cipher designates that the letter starts at in the alphabet
     int placeOfCipher = 0;
 
-    for(int i = 0; i < input.length(); i++) {
+    for (int i = 0; i < input.length(); i++) {
       current = input.charAt(i);
       //the current letter being encrypted.
       keyCurrent = key.charAt(placeOfKey);
       //the current letter in the Key being used.
 
       // if indexOf() doesn't find the char, it returns -1 as the index.
-      if(alphabetUppercase.indexOf(current) > -1) //if the plaintext letter is uppercase
-      {
+      if (alphabetUppercase.indexOf(current) > -1) {
+
         shifter = alphabetLowercase.indexOf(keyCurrent);
         placeOfLetter = alphabetUppercase.indexOf(current);
-        placeOfCipher = placeOfLetter + shifter; //shift it to another uppercase letter
-        if(placeOfCipher > 25) //if it gets shifted outside of the alphabet
-        {
-          placeOfCipher = placeOfCipher - 26; //loop it back to the beginning of the alphabet
+        placeOfCipher = placeOfLetter + shifter;
+        //shift it to another uppercase letter
+        if (placeOfCipher > 25) {
+          //if it gets shifted outside of the alphabet
+          placeOfCipher = placeOfCipher - 26;
+          //loop it back to the beginning of the alphabet
         }
-        output += alphabetUppercase.charAt(placeOfCipher); //add the encrypted letter to the output string
-      }
-      else if(alphabetLowercase.indexOf(current) > -1) //if the plaintext letter is lowercase
-      {
+        output += alphabetUppercase.charAt(placeOfCipher);
+        //add the encrypted letter to the output string
+      } else if (alphabetLowercase.indexOf(current) > -1) {
+        //if the plaintext letter is lowercase
         shifter = alphabetLowercase.indexOf(keyCurrent);
         placeOfLetter = alphabetLowercase.indexOf(current);
-        placeOfCipher = placeOfLetter + shifter; //shift it to another uppercase letter
-        if(placeOfCipher > 25) //if it gets shifted outside of the alphabet
-        {
-          placeOfCipher = placeOfCipher - 26; //loop it back to the beginning of the alphabet
+        placeOfCipher = placeOfLetter + shifter;
+        //shift it to another uppercase letter
+        if (placeOfCipher > 25) {
+          //if it gets shifted outside of the alphabet
+          placeOfCipher = placeOfCipher - 26;
+          //loop it back to the beginning of the alphabet
         }
-        output += alphabetLowercase.charAt(placeOfCipher); //add the encrypted letter to the output string
-      }
-      else //if the plaintext letter is not a letter.
-      {
-        placeOfKey--; //don't increase the place in the password. (negates increasing it later.)
+        output += alphabetLowercase.charAt(placeOfCipher);
+        //add the encrypted letter to the output string
+      } else {
+        //if the plaintext letter is not a letter.
+        placeOfKey--;
+        //don't increase the place in the password. (negates increasing it later.)
         output += current;
       }
-      placeOfKey++; //go to the next letter in the password.
-      if(placeOfKey >= key.length()) { placeOfKey = 0; } //loop back to the first letter of the password if the end has been reached.
+      placeOfKey++;
+      //go to the next letter in the password.
+      if (placeOfKey >= key.length()) { placeOfKey = 0; }
+      //loop back to the first letter of the password if the end has been reached.
+      
     }
     return output.toString();
   }
@@ -127,50 +135,43 @@ public class VigenereCipher {
       //the current letter being decrypted.
       keyCurrent = key.charAt(placeOfKey);
       //the current letter in the Key being used.
-      
+
       // if indexOf() doesn't find the char, it returns -1 as the index.
-      if(alphabetUppercase.indexOf(current) > -1)
-      //if the output letter is uppercase
-      {
+      if (alphabetUppercase.indexOf(current) > -1) {
+        //if the output letter is uppercase
         shifter = alphabetLowercase.indexOf(keyCurrent);
         placeOfLetter = alphabetUppercase.indexOf(current);
         placeOfInput = placeOfLetter - shifter;
         //shift it to another uppercase letter
-        if(placeOfInput < 0)
-        //if it gets shifted outside of the alphabet
-        {
+        if (placeOfInput < 0) {
+          //if it gets shifted outside of the alphabet
           placeOfInput = placeOfInput + 26;
           //loop it back to the end of the alphabet
         }
         input += alphabetUppercase.charAt(placeOfInput);
         //add the decrypted letter to the input string
-      }
-      else if(alphabetLowercase.indexOf(current) > -1)
-      //if the output letter is lowercase
-      {
+      } else if(alphabetLowercase.indexOf(current) > -1) {
+        //if the output letter is lowercase
         shifter = alphabetLowercase.indexOf(keyCurrent);
         placeOfLetter = alphabetLowercase.indexOf(current);
         placeOfInput = placeOfLetter - shifter;
         //shift it to another uppercase letter
-        if(placeOfInput < 0)
-        //if it gets shifted outside of the alphabet
-        {
+        if (placeOfInput < 0) {
+          //if it gets shifted outside of the alphabet
           placeOfInput = placeOfInput + 26;
           //loop it back to the end of the alphabet
         }
         input += alphabetLowercase.charAt(placeOfInput);
         //add the decrypted letter to the input string
-      }
-      else
-      //if the output letter is not a letter.
-      {
+      } else {
+        //if the output letter is not a letter.
         placeOfKey--;
         //don't increase the place in the Key. (negates increasing it later.)
         input += current;
       }
       placeOfKey++;
       //go to the next letter in the Key.
-      if(placeOfKey >= key.length()) { placeOfKey = 0; }
+      if (placeOfKey >= key.length()) { placeOfKey = 0; }
       //loop back to the first letter of the Key if the end has been reached.
     }
     return input.toString();

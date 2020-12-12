@@ -2,8 +2,8 @@ package project;
 
 import java.lang.*;
 import java.io.*;
-import java.util.Scanner;
 import java.util.*;
+import java.util.Scanner;
 
 /**
 * Class containing the main method.
@@ -13,14 +13,17 @@ import java.util.*;
 * @author Gabe Schwartz
 */
 public class CipherProgram {
+
   // add your implementation of the main method
+
   /**
   * @param args
   */
   public static void main(String[] args) {
-    final int VALUE_LOWER_LIMIT = 1;
-    final int VALUE_MIDDLE_LIMIT = 2;
-    final int VALUE_UPPER_LIMIT = 3;
+
+    final int valueLowerLimit = 1;
+    final int valueMiddleLimit = 2;
+    final int valueUpperLimit = 3;
 
     System.out.println("Welcome to \"Useful Tool for Spies\", a Cipher program!\n");
     System.out.println("Please choose your desired cipher from the available options below.\n");
@@ -30,7 +33,7 @@ public class CipherProgram {
     Scanner scanChoice = new Scanner(System.in);
     System.out.println("Enter \"1\", \"2\" or \"3\": \n");
     int choiceEntry = scanChoice.nextInt();
-    if (choiceEntry == VALUE_LOWER_LIMIT) {
+    if (choiceEntry == valueLowerLimit) {
       System.out.println("\nYou have chosen the Caesarian Cipher!\n");
       Scanner scanner = new Scanner(System.in);
       char password[] = null;
@@ -61,7 +64,7 @@ public class CipherProgram {
         System.out.println("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
         System.out.println("Have a nice day!");
       }
-    } else if (choiceEntry == VALUE_MIDDLE_LIMIT) {
+    } else if (choiceEntry == valueMiddleLimit) {
       System.out.println("\nYou have chosen the Vigenere Cipher!\n");
       Scanner scanner = new Scanner(System.in);
       char password2[] = null;
@@ -90,13 +93,13 @@ public class CipherProgram {
         System.out.print("\nThank you for using \"Useful Tool for Spies\", a Cipher Program!");
         System.out.print(" Have a nice day!");
       }
-    } else if (choiceEntry == VALUE_UPPER_LIMIT) {
+    } else if (choiceEntry == valueUpperLimit) {
       System.out.println("\nYou have chosen the Java Cipher!");
       Scanner scanner = new Scanner(System.in);
       char password3[] = null;
       try {
         password3 = PasswordField.getPassword(System.in, "Please enter your message: \n");
-      } catch(IOException ioe) {
+      } catch (IOException ioe) {
         ioe.printStackTrace();
       }
       if (password3 == null) {
