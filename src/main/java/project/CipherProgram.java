@@ -15,11 +15,7 @@ import java.util.Scanner;
 public class CipherProgram {
 
   // add your implementation of the main method
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> a923546788e577d630ce6f0955393fe7ff3b8abd
   /**
   * @param args
   */

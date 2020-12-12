@@ -6,6 +6,7 @@ import java.util.*;
 /**
 * This class questions the user for an input in the terminal window.
 * and attempts to mask input with "*".
+*
 * @author Quisay H. Mahmoud
 * @author Alan Sommerer
 * @author Adriana Solis
