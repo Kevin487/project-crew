@@ -9,6 +9,62 @@ Furthermore, we have created more java files, within the file "hidden message" w
 
 ## Implementation of your Program
 
+The implementation of our program translates to the design of our program and it is a very long explanation, so I will break it down through notes and a list format.
+
+CipherProgram.java
+- Import necessary java packages, such as a scanner
+- Define each cipher by assigning a numerical value
+- Hard coding of system print line statements and system input variables
+- Call upon Cipher methods according to the cipher you are trying to use
+- Call upon masking thread and passwordfield.java method implementations
+- Rinse and repeat steps for the next ciphers
+- Java Cipher, rinse and repeat steps, but call methods from both the CaesarianCipher and VigenereCipher
+
+CaesarianCipher.java (Encryption)
+- Define the user generated inputs
+- Assign integer value to each letter and implement shift
+-
+
+CaesarianCipher.java (Decryption)
+- turn values into lower case
+- decrypt using the user generated input
+
+VignereCipher.java (Encryption)
+- Define strings for output and input (user generated inputs)
+- Create key for the output for decryption
+- Declare the alphabet that will be used for encryption and decryption of message
+- Use a for loop iteration for each individual letter being encrypted and the current letter in the key being supposed
+- shift using the loop iteration
+
+VignereCipher.java (Decryption)
+- create a for loop iteration to for each individual letter being decrypted
+- shift using the loop iteration
+
+MaskingThread.java
+- try catch block to initiate masking with chosen symbol
+- bring back the what was given
+
+PasswordField.java
+- Implement an iteration to mask a input with chosen symbol
+
+TestCaesarianCipher.java
+- Testing that the cipher will not handle empty messages from users
+- Test that the cipher should be able to encrypt and decrypt Uppercase and Lowercase letters
+- Test that the cipher should be able to encrypt the entire alphabet
+- Test that the cipher should be able to decrypt the users input
+
+TestVigenereCipher.java
+- Testing that the cipher will not handle empty messages from users
+- Test that the cipher should be able to encrypt and decrypt Uppercase and Lowercase letters
+- Test that the cipher should be able to encrypt the entire alphabet
+- Test that the cipher should be able to decrypt the users input
+
+TestJavaCipher.java
+- Testing that the cipher will not handle empty messages from users
+- Test that the cipher should be able to encrypt and decrypt Uppercase and Lowercase letters
+- Test that the cipher should be able to encrypt the entire alphabet
+- Test that the cipher should be able to decrypt the users input
+
 
 ## Evaluation and Testing of your Program
 
